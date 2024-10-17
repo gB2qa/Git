@@ -1,0 +1,49 @@
+1) На локальном репозитории сделать ветку для Postman	
+   git branch Postman
+На локальном репозитории сделать ветку для Jmeter	
+   git branch Jmeter
+На локальном репозитории сделать ветку для CheckLists	
+   git branch CheckLists
+На локальном репозитории сделать ветку для Bug Reports	
+   git branch Bug_Reports
+На локальном репозитории сделать ветку для SQL	
+   git branch SQL
+На локальном репозитории сделать ветку для Charles	
+   git branch Charles
+На локальном репозитории сделать ветку для Mobile testing	
+   git branch Mobile_testing
+2) Запушить все ветки на внешний репозитори	
+   git push --set-upstream origin Jmeter CheckLists Bug_Reports SQL Charles Mobile_testing
+3) В ветке Bag Reports сделать текстовый документ со структурой баг репорта	
+   git switch Bug_Reports
+   touch BR.txt
+   vim BR.txt и вводим данные
+4) Запушить структуру багрепорта на внешний репозиторий	
+   git add BR.txt
+   git commit -m "1.0"
+   git push и вводим ключ
+5) Вмержить ветку Bag Reports в Main	
+   git switch main
+   git merge Bug_Reports
+6) Запушить main на внешний репозиторий	
+   git push --set-upstream origin main
+7) В ветке CheckLists набросать структуру чек листа	
+   git switch CheckLists
+   touch CL.txt
+   vim CL.txt и вводим данные
+8) Запушить структуру на внешний репозиторий	
+   git add CL.txt
+   git commit -m "1.0"
+   git push и вводим ключ
+9) На внешнем репозитории сделать Pull Request ветки CheckLists в main	
+   1. Выбираем вкладку Pull requests
+   2. Нажимаем New pull request
+   3. Выбираем из какой ветки в какую будут вливаться изменения
+   4. Нажимаем Create pull request
+   5. Вводим,если нужен комментарий
+   6. Нажимаем Create pull request
+   7. Нажимаем Merge pull request
+   8. Нажимаем Confirm merge
+10) Синхронизировать Внешнюю и Локальную ветки Main	
+   git switch main
+   git pull
